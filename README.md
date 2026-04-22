@@ -1,10 +1,10 @@
-# Faculty Web Presence
+<h2 align="center">Faculty Web Presence</h2>
 
-## Team Members
-- Connor Brill
-- Sydney Gilchrist
-- Nicholas Lilland
-- Sophia Sipayboun
+<h3 align="center">Team Members</h3>
+
+<p align="center">
+Connor Brill, Sydney Gilchrist, Nicholas Lilland, Sophia Sipayboun
+</p>
 
 ## Purpose
 This project is a simple faculty web presence prototype created for a course assignment. The goal is to demonstrate interface planning, HTML structure, CSS styling, and professional project organization using GitHub.
