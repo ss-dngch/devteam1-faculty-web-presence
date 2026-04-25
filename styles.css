@@ -1,0 +1,51 @@
+/*
+Blue HEX #004170
+Green HEX #86a23f
+Gold HEX #e7b82b
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+nav {
+    background-color: #004170;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav li {
+    margin: 0 15px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+}
+.logo {
+    width: 100px; /* Adjust as needed */
+}
+main {
+    flex: 1;
+    padding: 20px;
+}
+footer {
+    background-color: #004170;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.footer-section {
+    margin: 10px 0;
+}
