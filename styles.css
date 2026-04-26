@@ -35,7 +35,8 @@ nav a {
     text-decoration: none;
 }
 .logo {
-    width: 100px; /* Adjust as needed */
+    height: 50px;
+    width: auto;
 }
 /* End Navigation Styles */
 
