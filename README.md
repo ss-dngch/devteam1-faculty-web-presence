@@ -1,4 +1,8 @@
-<h2 align="center">Faculty Web Presence</h2>
+<h2 align="center">Faculty Web Presence Application</h2>
+
+<p align="center">
+A full-stack faculty web application demonstrating CRUD operations using PHP and MySQL.
+</p>
 
 <h3 align="center">Team Members</h3>
 
@@ -6,22 +10,99 @@
 Connor Brill, Sydney Gilchrist, Nicholas Lilland, Sophia Sipayboun
 </p>
 
-## Purpose
-This project is a simple faculty web presence prototype created for a course assignment. The goal is to demonstrate interface planning, HTML structure, CSS styling, and professional project organization using GitHub.
+<h2>Purpose</h2>
+<p>
+This project is a Faculty Web Presence Application created for a course assignment. The project began as a static HTML/CSS prototype and is now being expanded into an interactive, database-driven web application with CRUD functionality.
+</p>
+<p>
+The goal is to demonstrate interface planning, frontend structure, backend integration, database interaction, and professional project organization using GitHub.
+</p>
 
-## Repository Contents
-- index.html – front-facing faculty page  
-- faculty-profile.html – faculty profile page  
-- contact.html – contact form page  
-- styles.css – site styling  
-- images/ – image assets  
-- design/ – wireframes and planning materials  
+<h2>Technologies Used</h2>
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>PHP</li>
+<li>MySQL</li>
+<li>XAMPP</li>
+<li>GitHub</li>
+</ul>
 
-## How to View Locally
-1. Download or clone this repository.
-2. Open the project folder.
-3. Open `index.html` in a web browser.
-4. Open `contact.html` to view the second page.
+<h2>Repository Contents</h2>
+<ul>
+<li><strong>frontend/</strong> – user-facing PHP pages
+  <ul>
+    <li>index.php – homepage</li>
+    <li>faculty-profile.php – faculty profile page</li>
+    <li>contact.php – contact form page</li>
+  </ul>
+</li>
+<li><strong>backend/</strong> – backend PHP files for CRUD functionality
+  <ul>
+    <li>db.php – database connection</li>
+    <li>add-faculty.php – create functionality</li>
+    <li>edit-faculty.php – update functionality</li>
+    <li>delete-faculty.php – delete functionality</li>
+  </ul>
+</li>
+<li><strong>database/</strong> – database files
+  <ul>
+    <li>schema.sql – table structure</li>
+  </ul>
+</li>
+<li><strong>css/</strong> – styling
+  <ul>
+    <li>styles.css</li>
+  </ul>
+</li>
+<li><strong>images/</strong> – image assets</li>
+<li><strong>design/</strong> – wireframes and planning materials</li>
+</ul>
 
-## Notes
-This project is a prototype only. No backend or JavaScript functionality is included.
+<h2>How to Run Locally</h2>
+<ol>
+<li>Download and install XAMPP.</li>
+<li>Open XAMPP Control Panel and start <strong>Apache</strong>.</li>
+<li>Move or clone the project into:
+  <pre>C:\xampp\htdocs\</pre>
+</li>
+<li>Open the project in VS Code.</li>
+<li>In your browser, go to:
+  <pre>http://localhost/faculty-web-presence/frontend/index.php</pre>
+</li>
+</ol>
+
+<h2>GitHub Workflow</h2>
+<p>Team members should create a branch before making changes.</p>
+
+<pre>
+git checkout -b feature-name
+git add .
+git commit -m "Describe changes"
+git push origin feature-name
+</pre>
+
+<p>Then open a pull request before merging into main.</p>
+
+<h2>CRUD Functionality</h2>
+<ul>
+<li><strong>Create:</strong> Add new faculty information</li>
+<li><strong>Read:</strong> Display faculty data from the database</li>
+<li><strong>Update:</strong> Edit existing faculty information</li>
+<li><strong>Delete:</strong> Remove faculty entries</li>
+</ul>
+
+<h2>Testing Plan</h2>
+<ul>
+<li>Faculty data displays correctly</li>
+<li>New entries can be added</li>
+<li>Existing entries can be updated</li>
+<li>Entries can be deleted</li>
+<li>Changes persist after refresh</li>
+<li>Navigation and styling work correctly</li>
+</ul>
+
+<h2>Notes</h2>
+<p>
+This project is being expanded from a static prototype into a dynamic PHP/MySQL application. The original design is maintained while adding backend functionality.
+</p>
