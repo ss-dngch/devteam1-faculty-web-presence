@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="faculty-profile.html">Faculty Profile</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="faculty-profile.php">Faculty Profile</a></li>
         </ul>
-        <img src="images/logo.png" alt="Logo" class="logo">
+        <img src="../images/logo.png" alt="Logo" class="logo">
     </nav>
     <main>
         <!-- Page content goes here -->
@@ -26,7 +26,7 @@
     <section class="profile-overview">
         <div class="profile-left">
             <div class="photo-placeholder">
-                <img src="images/DrWhiskers.jpg" alt="Faculty Headshot">
+                <img src="../images/DrWhiskers.jpg" alt="Faculty Headshot">
             </div>
         </div>
         <div class="profile-right">
@@ -34,7 +34,7 @@
             <p><strong>Department:</strong> Computer Science</p>
             <p><strong>Location:</strong> St. Petersburg Campus</p>
             <p><strong>Office Hours:</strong> Mon/Wed 2:00 PM – 4:00 PM</p>
-            <a class="profile-button" href="faculty-profile.html">View Profile</a>
+            <a class="profile-button" href="faculty-profile.php">View Profile</a>
         </div>
     </section>
     </main>

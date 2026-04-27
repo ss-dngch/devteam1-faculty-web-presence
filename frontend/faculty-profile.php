@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculty Profile</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="faculty-profile.html">Faculty Profile</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="faculty-profile.php">Faculty Profile</a></li>
         </ul>
-        <img src="images/logo.png" alt="Logo" class="logo">
+        <img src="../images/logo.png" alt="Logo" class="logo">
     </nav>
     <main>
         <!-- Page content goes here -->
@@ -25,7 +25,7 @@
         <section class="profile-overview">
         
         <div class="profile-left">
-            <img src="images/DrWhiskers.jpg" alt="Faculty Headshot">
+            <img src="../images/DrWhiskers.jpg" alt="Faculty Headshot">
         </div>
 
         <div class="profile-right">
@@ -40,14 +40,14 @@
                 <li>Thursday: Closed</li>
                 <li>Friday: Closed</li>
             </ul>
-            <a class="contact-button" href="contact.html">Contact Dr. Whiskers</a>
+            <a class="contact-button" href="contact.php">Contact Dr. Whiskers</a>
         </div>
 
         </section>
 
         <hr>
 
-        <section class="peofile-overview">
+        <section class="profile-overview">
 
             <div class="profile-left">
                 <h3>Biography</h3>

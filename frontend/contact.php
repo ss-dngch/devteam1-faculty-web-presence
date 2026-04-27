@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Page</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="faculty-profile.html">Faculty Profile</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="faculty-profile.php">Faculty Profile</a></li>
         </ul>
-        <img src="images/logo.png" alt="Logo" class="logo">
+        <img src="../images/logo.png" alt="Logo" class="logo">
     </nav>
     <main>
         <!-- Page content goes here -->
