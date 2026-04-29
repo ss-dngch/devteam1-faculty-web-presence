@@ -1,3 +1,10 @@
+<?php
+require_once "../backend/db.php";
+
+$stmt = $pdo->query("SELECT * FROM faculty LIMIT 1");
+$faculty = $stmt->fetch(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,47 +22,37 @@
         </ul>
         <img src="../images/logo.png" alt="Logo" class="logo">
     </nav>
+
     <main>
-        <!-- Page content goes here -->
         <section class="search-row">
-            <h1>Dr. Whiskers</h1>
+            <h1><?= htmlspecialchars($faculty['name']) ?></h1>
             <p>Faculty Profile</p>
         </section>
 
         <section class="profile-overview">
-        
-        <div class="profile-left">
-            <img src="../images/DrWhiskers.jpg" alt="Faculty Headshot">
-        </div>
+            <div class="profile-left">
+                <img src="<?= htmlspecialchars($faculty['profile_image_url']) ?>" alt="Faculty Headshot">
+            </div>
 
-        <div class="profile-right">
-            <h2>Computer Science</h2>
-            <p><strong>Email:</strong> Whiskers@spcollege.edu</p>
-            <p><strong>Location:</strong> St. Petersburg Campus</p>
-            <p><strong>Office Hours:</strong></p>
-            <ul>
-                <li>Monday: 2:00 PM - 4:00 PM</li>
-                <li>Tuesday: Closed</li>
-                <li>Wednesday: 2:00 PM - 4:00 PM</li>
-                <li>Thursday: Closed</li>
-                <li>Friday: Closed</li>
-            </ul>
-            <a class="contact-button" href="contact.php">Contact Dr. Whiskers</a>
-        </div>
+            <div class="profile-right">
+                <h2><?= htmlspecialchars($faculty['department']) ?></h2>
+                <p><strong>Title:</strong> <?= htmlspecialchars($faculty['title']) ?></p>
+                <p><strong>Email:</strong> <?= htmlspecialchars($faculty['email']) ?></p>
+                <p><strong>Location:</strong> <?= htmlspecialchars($faculty['office_location']) ?></p>
+                <p><strong>Office Hours:</strong> <?= htmlspecialchars($faculty['office_hours']) ?></p>
 
+                <a class="contact-button" href="contact.php">
+                    Contact <?= htmlspecialchars($faculty['name']) ?>
+                </a>
+            </div>
         </section>
 
         <hr>
 
         <section class="profile-overview">
-
             <div class="profile-left">
                 <h3>Biography</h3>
-                <p>
-                    Dr. Whiskers is a dedicated professor in the Computer Science Department, specializing in software development and web 
-                    technologies. With years of teaching experience, Dr. Whiskers focuses on helping students build strong technical and 
-                    problem-solving skills.
-                </p>
+                <p><?= htmlspecialchars($faculty['biography']) ?></p>
             </div>
 
             <div class="profile-right">
@@ -70,18 +67,19 @@
                 <p>Ph.D. in Computer Science</p>
                 <p>M.S. in Software Engineering</p>
             </div>
-
         </section>
-
     </main>
+
     <footer>
         <div class="footer-section">
             <h3>St. Petersburg College</h3>
             <p>P.O Box 13489<br>St.Petersburg, FL 33733</p>
         </div>
+
         <div class="footer-section">
             <p>&copy; 2026 St. Petersburg College. All rights reserved.</p>
         </div>
+
         <div class="footer-section">
             <h3>Disclaimer</h3>
             <p>This website is for informational purposes only. Content may not be reproduced without permission.</p>
