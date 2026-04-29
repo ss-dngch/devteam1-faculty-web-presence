@@ -12,7 +12,7 @@ Connor Brill, Sydney Gilchrist, Nicholas Lilland, Sophia Sipayboun
 
 <h2>Purpose</h2>
 <p>
-This project is a Faculty Web Presence Application created for a course assignment. The project began as a static HTML/CSS prototype and is now being expanded into an interactive, database-driven web application with CRUD functionality.
+This project is a Faculty Web Presence Application created for a course assignment. The project began as a static HTML/CSS prototype and has been expanded into an interactive, database-driven web application with CRUD functionality.
 </p>
 <p>
 The goal is to demonstrate interface planning, frontend structure, backend integration, database interaction, and professional project organization using GitHub.
@@ -37,7 +37,7 @@ The goal is to demonstrate interface planning, frontend structure, backend integ
     <li>contact.php – contact form page</li>
   </ul>
 </li>
-<li><strong>backend/</strong> – backend PHP files for CRUD functionality
+<li><strong>backend/</strong> – backend PHP files for database connection and CRUD functionality
   <ul>
     <li>db.php – database connection</li>
     <li>add-faculty.php – create functionality</li>
@@ -47,7 +47,7 @@ The goal is to demonstrate interface planning, frontend structure, backend integ
 </li>
 <li><strong>database/</strong> – database files
   <ul>
-    <li>schema.sql – table structure</li>
+    <li>schema.sql – table structure and initial data</li>
   </ul>
 </li>
 <li><strong>css/</strong> – styling
@@ -62,13 +62,20 @@ The goal is to demonstrate interface planning, frontend structure, backend integ
 <h2>How to Run Locally</h2>
 <ol>
 <li>Download and install XAMPP.</li>
-<li>Open XAMPP Control Panel and start <strong>Apache</strong>.</li>
+<li>Open XAMPP Control Panel and start <strong>Apache</strong> and <strong>MySQL</strong>.</li>
 <li>Move or clone the project into:
   <pre>C:\xampp\htdocs\</pre>
 </li>
+<li>Import the database schema:
+  <ul>
+    <li>Go to http://localhost/phpmyadmin</li>
+    <li>Create a database named <strong>faculty_web_presence</strong></li>
+    <li>Import the <strong>schema.sql</strong> file into the database</li>
+  </ul>
+</li>
 <li>Open the project in VS Code.</li>
 <li>In your browser, go to:
-  <pre>http://localhost/faculty-web-presence/frontend/index.php</pre>
+  <pre>http://localhost/devteam1-faculty-web-presence/frontend/index.php</pre>
 </li>
 </ol>
 
@@ -86,23 +93,31 @@ git push origin feature-name
 
 <h2>CRUD Functionality</h2>
 <ul>
-<li><strong>Create:</strong> Add new faculty information</li>
-<li><strong>Read:</strong> Display faculty data from the database</li>
+<li><strong>Create:</strong> Add new faculty information through forms</li>
+<li><strong>Read:</strong> Display faculty data dynamically from the database</li>
 <li><strong>Update:</strong> Edit existing faculty information</li>
-<li><strong>Delete:</strong> Remove faculty entries</li>
+<li><strong>Delete:</strong> Remove faculty entries with confirmation</li>
 </ul>
 
 <h2>Testing Plan</h2>
 <ul>
-<li>Faculty data displays correctly</li>
+<li>Faculty data displays correctly from the database</li>
 <li>New entries can be added</li>
 <li>Existing entries can be updated</li>
 <li>Entries can be deleted</li>
-<li>Changes persist after refresh</li>
-<li>Navigation and styling work correctly</li>
+<li>Changes persist after page refresh</li>
+<li>Navigation, forms, images, and styling work correctly</li>
+</ul>
+
+<h2>Future Improvements</h2>
+<ul>
+<li>Implement user authentication for secure editing</li>
+<li>Expand faculty records (courses, publications, research)</li>
+<li>Enhance user interface and interactivity</li>
+<li>Deploy application to a live hosting environment</li>
 </ul>
 
 <h2>Notes</h2>
 <p>
-This project is being expanded from a static prototype into a dynamic PHP/MySQL application. The original design is maintained while adding backend functionality.
+This project has been successfully transitioned from a static prototype into a dynamic PHP/MySQL application. The original design has been maintained while integrating backend functionality and database connectivity.
 </p>
