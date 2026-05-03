@@ -35,6 +35,7 @@
             <p><strong>Location:</strong> St. Petersburg Campus</p>
             <p><strong>Office Hours:</strong> Mon/Wed 2:00 PM – 4:00 PM</p>
             <a class="profile-button" href="faculty-profile.php">View Profile</a>
+            <a class="profile-button" href="../backend/delete-faculty.php?id=1"onclick="return confirm('Are you sure?')">Delete</a>
         </div>
     </section>
     </main>
