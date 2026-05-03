@@ -4,9 +4,8 @@ require 'db.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $stmt = $conn->prepare("DELETE FROM faculty WHERE faculty_id = ?");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
+    $stmt = $pdo->prepare("DELETE FROM faculty WHERE faculty_id = ?");
+    $stmt->execute([$id]);
 }
 
 header("Location: ../frontend/index.php");

@@ -1,3 +1,10 @@
+<?php
+require '../backend/db.php';
+
+$stmt = $pdo->query("SELECT * FROM faculty");
+$faculty = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,38 +22,49 @@
         </ul>
         <img src="../images/logo.png" alt="Logo" class="logo">
     </nav>
+
     <main>
-        <!-- Page content goes here -->
         <form class="search-form" action="#" method="get">
             <input type="text" name="search" placeholder="Search..." aria-label="Search">
             <button type="submit">Search</button>
         </form>
-    </section>
 
-    <section class="profile-overview">
-        <div class="profile-left">
-            <div class="photo-placeholder">
-                <img src="../images/DrWhiskers.jpg" alt="Faculty Headshot">
-            </div>
-        </div>
-        <div class="profile-right">
-            <h2>Dr. Whiskers</h2>
-            <p><strong>Department:</strong> Computer Science</p>
-            <p><strong>Location:</strong> St. Petersburg Campus</p>
-            <p><strong>Office Hours:</strong> Mon/Wed 2:00 PM – 4:00 PM</p>
-            <a class="profile-button" href="faculty-profile.php">View Profile</a>
-            <a class="profile-button" href="../backend/delete-faculty.php?id=1"onclick="return confirm('Are you sure?')">Delete</a>
-        </div>
-    </section>
+        <?php foreach ($faculty as $person): ?>
+            <section class="profile-overview">
+                <div class="profile-left">
+                    <div class="photo-placeholder">
+                        <img src="../<?php echo htmlspecialchars($person['profile_image_url']); ?>" alt="Faculty Headshot">
+                    </div>
+                </div>
+
+                <div class="profile-right">
+                    <h2><?php echo htmlspecialchars($person['name']); ?></h2>
+                    <p><strong>Department:</strong> <?php echo htmlspecialchars($person['department']); ?></p>
+                    <p><strong>Location:</strong> <?php echo htmlspecialchars($person['office_location']); ?></p>
+                    <p><strong>Office Hours:</strong> <?php echo htmlspecialchars($person['office_hours']); ?></p>
+
+                    <a class="profile-button" href="faculty-profile.php?id=<?php echo $person['faculty_id']; ?>">View Profile</a>
+
+                    <a class="profile-button"
+                       href="../backend/delete-faculty.php?id=<?php echo $person['faculty_id']; ?>"
+                       onclick="return confirm('Are you sure you want to delete this faculty member?')">
+                        Delete
+                    </a>
+                </div>
+            </section>
+        <?php endforeach; ?>
     </main>
+
     <footer>
         <div class="footer-section">
             <h3>St. Petersburg College</h3>
             <p>P.O Box 13489<br>St.Petersburg, FL 33733</p>
         </div>
+
         <div class="footer-section">
             <p>&copy; 2026 St. Petersburg College. All rights reserved.</p>
         </div>
+
         <div class="footer-section">
             <h3>Disclaimer</h3>
             <p>This website is for informational purposes only. Content may not be reproduced without permission.</p>

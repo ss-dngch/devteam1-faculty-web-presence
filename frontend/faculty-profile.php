@@ -1,8 +1,21 @@
 <?php
 require_once "../backend/db.php";
 
-$stmt = $pdo->query("SELECT * FROM faculty LIMIT 1");
+$id = $_GET['id'] ?? null;
+
+if (!$id) {
+    header("Location: index.php");
+    exit();
+}
+
+$stmt = $pdo->prepare("SELECT * FROM faculty WHERE faculty_id = ?");
+$stmt->execute([$id]);
 $faculty = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$faculty) {
+    echo "Faculty profile not found.";
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +44,7 @@ $faculty = $stmt->fetch(PDO::FETCH_ASSOC);
 
         <section class="profile-overview">
             <div class="profile-left">
-                <img src="<?= htmlspecialchars($faculty['profile_image_url']) ?>" alt="Faculty Headshot">
+                <img src="../<?= htmlspecialchars($faculty['profile_image_url']) ?>" alt="Faculty Headshot">
             </div>
 
             <div class="profile-right">
