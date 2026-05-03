@@ -1,7 +1,7 @@
 <h2 align="center">Faculty Web Presence Application</h2>
 
 <p align="center">
-A full-stack faculty web application demonstrating CRUD operations using PHP and MySQL.
+A full-stack faculty web application demonstrating full CRUD operations using PHP (PDO) and MySQL.
 </p>
 
 <h3 align="center">Team Members</h3>
@@ -12,7 +12,7 @@ Connor Brill, Sydney Gilchrist, Nicholas Lilland, Sophia Sipayboun
 
 <h2>Purpose</h2>
 <p>
-This project is a Faculty Web Presence Application created for a course assignment. The project began as a static HTML/CSS prototype and has been expanded into an interactive, database-driven web application with CRUD functionality.
+This project is a Faculty Web Presence Application created for a course assignment. The project began as a static HTML/CSS prototype and has been expanded into an interactive, database-driven web application with full CRUD functionality.
 </p>
 <p>
 The goal is to demonstrate interface planning, frontend structure, backend integration, database interaction, and professional project organization using GitHub.
@@ -22,21 +22,27 @@ The goal is to demonstrate interface planning, frontend structure, backend integ
 <ul>
 <li>HTML</li>
 <li>CSS</li>
-<li>PHP</li>
-<li>MySQL</li>
+<li>PHP (PDO)</li>
+<li>MySQL (phpMyAdmin)</li>
 <li>XAMPP</li>
 <li>GitHub</li>
 </ul>
 
 <h2>Repository Contents</h2>
 <ul>
+<li><strong>index.php</strong> – root redirect to frontend homepage</li>
+
 <li><strong>frontend/</strong> – user-facing PHP pages
   <ul>
-    <li>index.php – homepage</li>
-    <li>faculty-profile.php – faculty profile page</li>
+    <li>index.php – homepage (landing page)</li>
+    <li>faculty-directory.php – dynamic faculty listing</li>
+    <li>faculty-profile.php – individual faculty profiles</li>
+    <li>add-faculty-form.php – form to create new faculty</li>
+    <li>edit-faculty-form.php – form to update faculty</li>
     <li>contact.php – contact form page</li>
   </ul>
 </li>
+
 <li><strong>backend/</strong> – backend PHP files for database connection and CRUD functionality
   <ul>
     <li>db.php – database connection</li>
@@ -45,17 +51,21 @@ The goal is to demonstrate interface planning, frontend structure, backend integ
     <li>delete-faculty.php – delete functionality</li>
   </ul>
 </li>
+
 <li><strong>database/</strong> – database files
   <ul>
     <li>schema.sql – table structure and initial data</li>
   </ul>
 </li>
+
 <li><strong>css/</strong> – styling
   <ul>
     <li>styles.css</li>
   </ul>
 </li>
-<li><strong>images/</strong> – image assets</li>
+
+<li><strong>images/</strong> – image assets (including uploaded faculty images)</li>
+
 <li><strong>design/</strong> – wireframes and planning materials</li>
 </ul>
 
@@ -75,7 +85,7 @@ The goal is to demonstrate interface planning, frontend structure, backend integ
 </li>
 <li>Open the project in VS Code.</li>
 <li>In your browser, go to:
-  <pre>http://localhost/devteam1-faculty-web-presence/frontend/index.php</pre>
+  <pre>http://localhost/devteam1-faculty-web-presence/</pre>
 </li>
 </ol>
 
@@ -93,18 +103,18 @@ git push origin feature-name
 
 <h2>CRUD Functionality</h2>
 <ul>
-<li><strong>Create:</strong> Add new faculty information through forms</li>
-<li><strong>Read:</strong> Display faculty data dynamically from the database</li>
-<li><strong>Update:</strong> Edit existing faculty information</li>
-<li><strong>Delete:</strong> Remove faculty entries with confirmation</li>
+<li><strong>Create:</strong> Add new faculty records via form with image upload support</li>
+<li><strong>Read:</strong> Display dynamic faculty directory and individual profile pages</li>
+<li><strong>Update:</strong> Edit existing faculty records with pre-filled form data</li>
+<li><strong>Delete:</strong> Remove faculty records with confirmation prompt</li>
 </ul>
 
 <h2>Testing Plan</h2>
 <ul>
 <li>Faculty data displays correctly from the database</li>
-<li>New entries can be added</li>
-<li>Existing entries can be updated</li>
-<li>Entries can be deleted</li>
+<li>New entries can be added and appear immediately</li>
+<li>Existing entries can be updated successfully</li>
+<li>Entries can be deleted with confirmation</li>
 <li>Changes persist after page refresh</li>
 <li>Navigation, forms, images, and styling work correctly</li>
 </ul>
@@ -120,4 +130,7 @@ git push origin feature-name
 <h2>Notes</h2>
 <p>
 This project has been successfully transitioned from a static prototype into a dynamic PHP/MySQL application. The original design has been maintained while integrating backend functionality and database connectivity.
+</p>
+<p>
+The application uses prepared statements (PDO) to ensure secure database interactions and prevent SQL injection.
 </p>
