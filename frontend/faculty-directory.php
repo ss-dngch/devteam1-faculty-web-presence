@@ -60,6 +60,10 @@ $faculty = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             View Profile
                         </a>
 
+                        <a class="profile-button" href="edit-faculty-form.php?id=<?php echo $person['faculty_id']; ?>">
+                            Edit
+                        </a>
+
                         <a class="profile-button"
                            href="../backend/delete-faculty.php?id=<?php echo $person['faculty_id']; ?>"
                            onclick="return confirm('Are you sure you want to delete this faculty member?')">
