@@ -30,8 +30,8 @@ if (!$faculty) {
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
+            <li><a href="faculty-directory.php">Faculty Directory</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <li><a href="faculty-profile.php">Faculty Profile</a></li>
         </ul>
         <img src="../images/logo.png" alt="Logo" class="logo">
     </nav>
@@ -70,15 +70,10 @@ if (!$faculty) {
 
             <div class="profile-right">
                 <h3>Courses Taught</h3>
-                <ul>
-                    <li>COP2839 - ASP.NET Programming w/ C#</li>
-                    <li>COP2251 - Java Programming II</li>
-                    <li>COP4523 - Algorithmic Design and Development</li>
-                </ul>
+                <p><?= nl2br(htmlspecialchars($faculty['courses_taught'])) ?></p>
 
                 <h3>Education</h3>
-                <p>Ph.D. in Computer Science</p>
-                <p>M.S. in Software Engineering</p>
+                <p><?= nl2br(htmlspecialchars($faculty['education'])) ?></p>
             </div>
         </section>
     </main>

@@ -1,61 +1,40 @@
-<?php
-require '../backend/db.php';
-
-$stmt = $pdo->query("SELECT * FROM faculty");
-$faculty = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>SPC Faculty System</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="contact.php">Contact</a></li>
-            <li><a href="faculty-profile.php">Faculty Profile</a></li>
-        </ul>
-        <img src="../images/logo.png" alt="Logo" class="logo">
-    </nav>
 
-    <main>
-        <form class="search-form" action="#" method="get">
-            <input type="text" name="search" placeholder="Search..." aria-label="Search">
-            <button type="submit">Search</button>
-        </form>
+<nav>
+    <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="faculty-directory.php">Faculty Directory</a></li>
+        <li><a href="contact.php">Contact</a></li>
+    </ul>
+    <img src="../images/logo.png" alt="Logo" class="logo">
+</nav>
 
-        <?php foreach ($faculty as $person): ?>
-            <section class="profile-overview">
-                <div class="profile-left">
-                    <div class="photo-placeholder">
-                        <img src="../<?php echo htmlspecialchars($person['profile_image_url']); ?>" alt="Faculty Headshot">
-                    </div>
-                </div>
+<main>
+    <section class="home-intro">
+        <div class="home-text">
+            <h1>Welcome to the SPC Faculty System</h1>
+            <p>Explore faculty profiles and manage records.</p>
 
-                <div class="profile-right">
-                    <h2><?php echo htmlspecialchars($person['name']); ?></h2>
-                    <p><strong>Department:</strong> <?php echo htmlspecialchars($person['department']); ?></p>
-                    <p><strong>Location:</strong> <?php echo htmlspecialchars($person['office_location']); ?></p>
-                    <p><strong>Office Hours:</strong> <?php echo htmlspecialchars($person['office_hours']); ?></p>
+            <a class="profile-button" href="faculty-directory.php">
+                View Faculty Directory
+            </a>
+        </div>
 
-                    <a class="profile-button" href="faculty-profile.php?id=<?php echo $person['faculty_id']; ?>">View Profile</a>
+        <img src="../images/SPC.jpg" alt="SPC Campus" class="hero-image">
+    </section>
+</main>
 
-                    <a class="profile-button"
-                       href="../backend/delete-faculty.php?id=<?php echo $person['faculty_id']; ?>"
-                       onclick="return confirm('Are you sure you want to delete this faculty member?')">
-                        Delete
-                    </a>
-                </div>
-            </section>
-        <?php endforeach; ?>
-    </main>
+</body>
 
-    <footer>
+<footer>
         <div class="footer-section">
             <h3>St. Petersburg College</h3>
             <p>P.O Box 13489<br>St.Petersburg, FL 33733</p>
@@ -70,5 +49,4 @@ $faculty = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <p>This website is for informational purposes only. Content may not be reproduced without permission.</p>
         </div>
     </footer>
-</body>
 </html>
