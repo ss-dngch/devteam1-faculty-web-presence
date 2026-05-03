@@ -1,35 +1,48 @@
 <?php
 
-try {
-    require_once 'db.php';
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: ../frontend/index.php');
+} else {
+    $name = $_POST['name'];
+    $title = $_POST['title'];
+    $department = $_POST['department'];
+    $biography = $_POST['biography'];
+    $email = $_POST['email'];
+    $office_location = $_POST['office_location'];
+    $office_hours = $_POST['office_hours'];
+    $profile_image_url = $_POST['profile_image_url'] ?? null;
 
-    $query = "INSERT INTO faculty 
-        (name, title, department, biography, email, office_location, office_hours, profile_image_url) 
-    VALUES 
-        (:name, :title, :department, :biography, :email, :office_location, :office_hours, :profile_image_url);";
+    try {      
 
-    $target_dir = '../images/';
-    $target_file = $target_dir . basename($_FILES['profile_image']['name']);
-    move_uploaded_file($_FILES['profile_image']['tmp_name'], $target_file);
+        require_once 'db.php';
 
-    $stmt = $pdo->prepare($query);
+        $query = "INSERT INTO faculty 
+            (name, title, department, biography, email, office_location, office_hours, profile_image_url) 
+        VALUES 
+            (:name, :title, :department, :biography, :email, :office_location, :office_hours, :profile_image_url);";
 
-    $stmt->bindParam(':name', $data['name']);
-    $stmt->bindParam(':title', $data['title']);
-    $stmt->bindParam(':department', $data['department']);
-    $stmt->bindParam(':biography', $data['biography']);
-    $stmt->bindParam(':email', $data['email']);
-    $stmt->bindParam(':office_location', $data['office_location']);
-    $stmt->bindParam(':office_hours', $data['office_hours']);
-    $stmt->bindParam(':profile_image_url', $target_file);
+        $stmt = $pdo->prepare($query);
 
-    $stmt->execute();
+        $stmt->bindParam(":name", $name);
+        $stmt->bindParam(":title", $title);
+        $stmt->bindParam(":department", $department) ?: null;
+        $stmt->bindParam(":biography", $biography) ?: null;
+        $stmt->bindParam(":email", $email);
+        $stmt->bindParam(":office_location", $office_location) ?: null;
+        $stmt->bindParam(":office_hours", $office_hours) ?: null;
+        $stmt->bindParam(":profile_image_url", $profile_image_url);
 
-    $pdo = null;
-    $stmt = null;
+        $stmt->execute();
 
-    die('Faculty added successfully');
+        $pdo = null;
+        $stmt = null;
 
-} catch (PDOException $e) {
-    die('Database error: ' . $e->getMessage());
+        header('Location: ../frontend/index.php');
+
+        exit();
+
+    } catch (PDOException $e) {
+        die('Database error: ' . $e->getMessage());
+    }
 }
+?>
