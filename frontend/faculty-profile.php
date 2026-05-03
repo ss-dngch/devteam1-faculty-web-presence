@@ -17,8 +17,8 @@ $faculty = $stmt->fetch(PDO::FETCH_ASSOC);
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="contact.php">Contact</a></li>
             <li><a href="faculty-profile.php">Faculty Profile</a></li>
+            <li><a href="contact.php">Contact</a></li>
         </ul>
         <img src="../images/logo.png" alt="Logo" class="logo">
     </nav>
