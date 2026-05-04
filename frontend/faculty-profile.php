@@ -36,47 +36,45 @@ if (!$faculty) {
         <img src="../images/logo.png" alt="Logo" class="logo">
     </nav>
 
-    <main>
-        <section class="search-row">
-            <h1><?= htmlspecialchars($faculty['name']) ?></h1>
-            <p>Faculty Profile</p>
-        </section>
+    <main class="profile-page">
+    <section class="search-row">
+        <h1><?= htmlspecialchars($faculty['name']) ?></h1>
+        <p>Faculty Profile</p>
+    </section>
 
-        <section class="profile-overview">
-            <div class="profile-left">
-                <img src="../<?= htmlspecialchars($faculty['profile_image_url']) ?>" alt="Faculty Headshot">
-            </div>
+    <section class="profile-card">
+        <div class="profile-left">
+            <img src="../<?= htmlspecialchars($faculty['profile_image_url']) ?>" alt="Faculty Headshot">
+        </div>
 
-            <div class="profile-right">
-                <h2><?= htmlspecialchars($faculty['department']) ?></h2>
-                <p><strong>Title:</strong> <?= htmlspecialchars($faculty['title']) ?></p>
-                <p><strong>Email:</strong> <?= htmlspecialchars($faculty['email']) ?></p>
-                <p><strong>Location:</strong> <?= htmlspecialchars($faculty['office_location']) ?></p>
-                <p><strong>Office Hours:</strong> <?= htmlspecialchars($faculty['office_hours']) ?></p>
+        <div class="profile-details">
+            <h2><?= htmlspecialchars($faculty['department']) ?></h2>
+            <p><strong>Title:</strong> <?= htmlspecialchars($faculty['title']) ?></p>
+            <p><strong>Email:</strong> <?= htmlspecialchars($faculty['email']) ?></p>
+            <p><strong>Location:</strong> <?= htmlspecialchars($faculty['office_location']) ?></p>
+            <p><strong>Office Hours:</strong> <?= htmlspecialchars($faculty['office_hours']) ?></p>
 
-                <a class="contact-button" href="contact.php">
-                    Contact <?= htmlspecialchars($faculty['name']) ?>
-                </a>
-            </div>
-        </section>
+            <a class="contact-button" href="contact.php">
+                Contact <?= htmlspecialchars($faculty['name']) ?>
+            </a>
+        </div>
+    </section>
 
-        <hr>
+    <section class="profile-extra">
+        <div>
+            <h3>Biography</h3>
+            <p><?= htmlspecialchars($faculty['biography']) ?></p>
+        </div>
 
-        <section class="profile-overview">
-            <div class="profile-left">
-                <h3>Biography</h3>
-                <p><?= htmlspecialchars($faculty['biography']) ?></p>
-            </div>
+        <div>
+            <h3>Courses Taught</h3>
+            <p><?= nl2br(htmlspecialchars($faculty['courses_taught'])) ?></p>
 
-            <div class="profile-right">
-                <h3>Courses Taught</h3>
-                <p><?= nl2br(htmlspecialchars($faculty['courses_taught'])) ?></p>
-
-                <h3>Education</h3>
-                <p><?= nl2br(htmlspecialchars($faculty['education'])) ?></p>
-            </div>
-        </section>
-    </main>
+            <h3>Education</h3>
+            <p><?= nl2br(htmlspecialchars($faculty['education'])) ?></p>
+        </div>
+    </section>
+</main>
 
     <footer>
         <div class="footer-section">
