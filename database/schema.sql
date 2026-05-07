@@ -10,12 +10,14 @@ CREATE TABLE IF NOT EXISTS faculty (
     email VARCHAR(100) NOT NULL,
     office_location VARCHAR(100),
     office_hours VARCHAR(255),
+    courses_taught TEXT,
+    education TEXT,
     profile_image_url VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 INSERT INTO faculty 
-(name, title, department, biography, email, office_location, office_hours, profile_image_url)
+(name, title, department, biography, email, office_location, office_hours, courses_taught, education, profile_image_url)
 VALUES
 (
     'Dr. Whiskers',
@@ -25,5 +27,7 @@ VALUES
     'Whiskers@spcollege.edu',
     'St. Petersburg Campus',
     'Monday/Wednesday 2:00 PM - 4:00 PM',
+    'Introduction to Programming, Web Development, Database Design',
+    'Ph.D. in Computer Science, M.S. in Information Technology',
     '../images/DrWhiskers.jpg'
 );
